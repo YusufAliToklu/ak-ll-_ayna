@@ -1,0 +1,116 @@
+﻿Raspery pi kurulumu
+ 
+1-Sd Formatter
+adres:https://www.sdcard.org/downloads/formatter_4/
+https://www.sdcard.org/downloads/formatter_4/eula_windows/SD_CardFormatter0500SetupEN.exe
+ 
+2-Win32 Disk İmager
+adres: https://sourceforge.net/projects/win32diskimager/
+https://netcologne.dl.sourceforge.net/project/win32diskimager/Archive/win32diskimager-1.0.0-install.exe
+ 
+3-https://www.raspberrypi.org/
+http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2018-03-14/2018-03-13-raspbian-stretch.zip
+ 
+ 
+Akıllı Ayna Kurulumu
+bash -c "$(curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh)"
+ 
+Akıllı Ayna Kurulum-Ayarları
+ 
+1-Uygulama Dilinin "TR" Ayarı
+2-Takvim Bağlantısı
+3-Ekran Merkezine Yazı Yazdırılması
+4-Zamana Göre Çıkan Yazıların Ayarı
+5-Haberler Bağlantısı
+6-Hava Durumu Ayarları
+ 
+**Terminalde kullanacağımız 2 komut satırı
+cd MagicMirror
+npm start
+ 
+**Yaptığımız işlemleri görmek için bu 2
+komut satırını kullanacağız.
+
+
+ 
+2-Takvim Bağlantısı
+ 
+url: "https://calendar.google.com/calendar/ical/tr.turkish%23holiday%40group.v.calendar.google.com/public/basic.ics"
+ 
+** "Bu link google takvimden alınmıştır.Resmi tatil ve özel günleri göstermektedir.
+Kişisel takvim ayarlarınızı eklemek için google hesabınızla giriş yaptıktan sonra takvim-ayarlar kısmından "İCS" uzantılı adresi kopyalayarak aynı yere yapıştırınız.
+ 
+5-Haberler Bağlantısı
+
+
+Haberlerini eklemek istediğiniz sitenin xml linkini bularak ilgili yere ekleyebilirsiniz.
+Örnek 2 haber sitesi: 
+url: "https://www.ahaber.com.tr/rss/anasayfa.xml"
+url: "http://www.haberturk.com/rss/manset.xml"
+ 
+6-Hava Durumu Ayarları
+ 
+http://www.openweathermap.org/help/city_list.txt
+ 
+http://www.openweathermap.org
+ 
+Bulunduğumuz şehrin lokasyon İD ve APKeyini öğrenmemiz gerekiyor.
+ 
+Edirne için
+ 
+İD:747712
+APK:8d002bcc9b56e5b94c9a1f182f5dc1c6
+ 
+ 
+ 
+Otomatik Başlatma Komutları
+ 
+sudo npm install -g pm2
+pm2 startup
+sudo env.............. satırını kopyala yapıştır enter
+cd
+nanomm.sh
+ 
+dosya içine
+cd MagicMirror
+npm start yaz
+CTRL+X
+E+Enter
+ 
+ 
+chmod +x mm.sh
+pm2 start mm.sh
+pm2 save
+reboot
+
+
+
+
+
+
+Ekran Koruyucuyu Kapatma-11.01.2019
+
+
+/home/pi/.config/lxsession/LXDE-pi git autostart dosyası içine aşağıdaki kod satırlarını ekle
+@xset s noblank
+@xset s off
+@xset -dpms
+
+
+
+
+02.05.2019
+  
+
+Kurulumda hata ile karşılaşanlar
+kurulum bittikten sonra
+
+
+Lxterminalde
+Cd MagicMirror
+git pull && npm install
+ komutlarını sırası ile girerek güncelleme yapın. 
+Güncelleme bittikten sonra sisteminizi yeniden başlatmanız faydalı olacaktır.
+
+
+MagicMirror/config dizini içindeki “config.js.sample “dosyasının adını “config.js” olarak düzeltiniz ve ayarları yapmaya başlayın.
