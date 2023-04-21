@@ -13,7 +13,7 @@ http://director.downloads.raspberrypi.org/raspbian/images/raspbian-2018-03-14/20
  
  
 Akıllı Ayna Kurulumu
-bash -c "$(curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh)"
+bash -c "$(curl -sL https://raw.githubusercontent.com/sdetweil/MagicMirror_scripts/master/raspberry.sh)"
  
 Akıllı Ayna Kurulum-Ayarları
  
