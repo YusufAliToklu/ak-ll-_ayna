@@ -59,7 +59,7 @@ Bulunduğumuz şehrin lokasyon İD ve APKeyini öğrenmemiz gerekiyor.
 Edirne için
  
 İD:747712
-APK:8d002bcc9b56e5b94c9a1f182f5dc1c6
+APK:601176595c6e892f163b383a22aa0259
  
  
  
